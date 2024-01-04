@@ -2,7 +2,7 @@
 """
 Created on Wed Jan  3 22:39:33 2024
 
-@author: deji
+@author: busola
 """
 
 import pandas as pd
@@ -42,8 +42,8 @@ unique = data.nunique()
 missing = data.isnull().sum()
 
 description = data.describe()
-# report = ProfileReport(data, title = "5G energy consumption")
-# report.to_file("5G energy consumption")
+report = ProfileReport(data, title = "5G energy consumption")
+report.to_file("5G energy consumption")
 
 correlation = data.corr()
 # Energy is highly overall correlated with TXpower
@@ -77,18 +77,8 @@ mean_squared_errors = mean_squared_error(y_test,predicted)
 print("RMSE: ",math.sqrt(mean_squared_errors))
 print("R_squared:",metrics.r2_score(y_test,predicted))
 
-#u need to use a 3D scatterplot
-
-
-
-
-# #r squared is like a 
-# # was y changes explained by the changes in x
-
-# # for a data frame to do a heatmap for only numerical or select only numerical
-# # data.select_dtype("number")
-# # for categorical, number becomes object
-
+# RMSE:  0.3899426029577845
+# R_squared: 0.832465855236887
 
 
 
